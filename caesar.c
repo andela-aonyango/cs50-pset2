@@ -26,6 +26,15 @@ int main(int argc, char* const argv[])
     return 0;
 }
 
+/* PrintCiphertext
+ * ---------------
+ *  prints the encrypted version of the plaintext
+ *
+ *  input: the string to be encrypted
+ *  key: the cipher key to be used to rotate the characters
+ *
+ *  prints the encrypted string
+*/
 void PrintCiphertext(string input, int key)
 {
     int i = 0;
@@ -37,7 +46,7 @@ void PrintCiphertext(string input, int key)
         if(isalpha(character))
         {
             if islower(character)
-            {
+            { // 3rd argument is the upper bound
                 PrintCharacter(character, key, 122);
             }
             if isupper(character)
@@ -54,6 +63,16 @@ void PrintCiphertext(string input, int key)
     printf("\n");
 }
 
+/* PrintCharacter
+ * --------------
+ *  helper function for PrintCiphertext
+ *
+ *  letter: the letter to be encrypted
+ *  key: the cipher key to use to encrypt the character
+ *  boundary: the ascii upper bound
+ *
+ *  prints the encrypted character
+*/
 void PrintCharacter(char letter, int key, int boundary)
 {
     if (letter+key > boundary)
