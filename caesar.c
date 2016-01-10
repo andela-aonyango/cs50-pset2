@@ -10,7 +10,7 @@ int main(int argc, char* const argv[])
 {
     if (argc != 2)
     {
-        printf("Usage: ./test NUMBER (A number between 1 and 25)\n");
+        printf("Usage: ./caesar NUMBER (A number between 1 and 25)\n");
         return 1;
     }
 
